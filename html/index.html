@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../bootstrap-resume-starting-point/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../bootstrap-resume-starting-point/jquery-3.2.1.js"></script>
+    <script src="../bootstrap-resume-starting-point/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style type="text/css">
+        nav{
+            width: 100%;
+            height: 60px;
+            background: rgba(0,0,0,.3);
+            position: absolute;
+            z-index: 10;
+        }
+        nav ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li{
+            text-align: center;
+            float: left;
+            line-height: 60px;
+        }
+        nav ul li a{
+            width: 100px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            display: block;
+        }
+        nav ul li a:hover,nav ul li a:visited{
+            text-decoration: none;
+            background: rgba(0,0,0,.5);
+            color: #fff;
+        }
+        .words{font-size: 40px;
+            letter-spacing: 10px;
+            position: absolute;
+            top:50%;
+            left: 30%;}
+        .imgw{position: relative;
+             opacity:0.3;
+             filter:alpha(opacity=40);}
+        img{
+            width:80%;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">思沃影院</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">主页<span class="sr-only">(current)</span></a></li>
+
+                </ul>
+
+
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入电影名">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+
+        </div><!-- /.container-fluid -->
+    </div>
+</nav>
+<hr>
+<hr>
+<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item active">
+            <div style=" width:100%">
+                <div  style=" float:left; width:33%;"><img src="../content/轮播25.webp"style="width:100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播28.webp"style="width: 100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播29.webp"style="width: 100%;height: 50%"></div>
+            </div>
+            <div class="carousel-caption">
+                <a class="btn btn-large btn-primary" href="#">神奇女侠</a>
+            </div>
+            <div class="container">
+            </div>
+        </div>
+        <div class="item">
+            <div style=" width:100%">
+                <div  style=" float:left; width:33%;"><img src="../content/轮播22.webp"style="width:100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播23.webp"style="width: 100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播24.webp"style="width: 100%;height: 50%"></div>
+            </div>
+            <div class="container">
+                <div class="carousel-caption">
+                    <a class="btn btn-large btn-danger" href="#">记忆大师</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div style=" width:100%">
+                <div  style=" float:left; width:33%;"><img src="../content/轮播16.jpg"style="width:100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播15.jpg"style="width: 100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播19.jpg"style="width: 100%;height: 50%"></div>
+            </div>
+            <div class="container">
+                <div class="carousel-caption">
+                    <a class="btn btn-large btn-danger" href="#">湄公河行动</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div><!-- /.carousel -->
+<!--content module-->
+
+<div class="container">
+<script src="../js/main.js"></script>
+<h2 align="center"><strong>影视分类</strong></h2><hr/>
+<div class="tabbable">
+    <div class="row-fluid" >
+        <div class="col-sm-2">
+            <h4 align="center"><strong>按类型分类</strong></h4>
+    <ul class="nav nav-pills " >
+        <li><a href="#alltype" data-toggle="tab" onclick="abruf(this.name)"name="alltype">全部类型</a></li>
+        <li><a href="#动作" data-toggle="tab" onclick="abruf(this.name)" name="动作">动作</a></li>
+        <li><a href="#喜剧" data-toggle="tab"onclick="abruf(this.name)"name="喜剧">喜剧</a></li>
+        <li><a href="#恐怖" data-toggle="tab" onclick="abruf(this.name)" name="恐怖">恐怖</a></li>
+        <li><a href="#情景" data-toggle="tab" onclick="abruf(this.name)" name="情景">情景剧</a></li>
+        <li><a href="#动漫" data-toggle="tab" onclick="abruf(this.name)"name="动漫">动漫</a></li>
+        <li><a href="#悬疑" data-toggle="tab" onclick="abruf(this.name)"name="悬疑">悬疑</a></li>
+        <li><a href="#惊悚" data-toggle="tab"onclick="abruf(this.name)" name="惊悚">惊悚</a></li>
+        <li><a href="#冒险" data-toggle="tab"onclick="abruf(this.name)" name="冒险">惊悚</a></li>
+        <li><a href="#奇幻" data-toggle="tab"onclick="abruf(this.name)" name="奇幻">奇幻</a></li>
+
+    </ul>
+            <hr>
+            <h4 align="center"><strong>按地区分类</strong></h4>
+            <ul class="nav nav-pills " >
+                <li><a href="#alltype" data-toggle="tab"onclick="abruf(this.name)"name="allplace">全部地区</a></li>
+                <li><a href="#action" data-toggle="tab" name="inland" onclick="abruf(this.name)">内地</a></li>
+                <li><a href="#comedy" data-toggle="tab" name="Hongkong and Taiwan"onclick="abruf(this.name)">港台</a></li>
+                <li><a href="#scary" data-toggle="tab" name="America"onclick="abruf(this.name)">美国</a></li>
+                <li><a href="#scen" data-toggle="tab" name="England"onclick="abruf(this.name)">英国</a></li>
+                <li><a href="#cartoon" data-toggle="tab" name="Korean"onclick="abruf(this.name)">韩国</a></li>
+                <li><a href="#suspenseful" data-toggle="tab" name="Japanese"onclick="abruf(this.name)">日本</a></li>
+                <li><a href="#panic" data-toggle="tab" name="Australian"onclick="abruf(this.name)">澳大利亚</a></li>
+                <li><a href="#panic" data-toggle="tab" name="Germary"onclick="abruf(this.name)">德国</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-4">
+            <button class="btn btn-primary">按时间排序</button>
+            <button class="btn btn-primary">按评分排序</button>
+                </div>
+
+            </div>
+            <hr>
+        <div class="tab-content">
+        <div class="tab-pane active fade"  id="alltype" >
+            <div class="container-fluid">
+                <div class="row"  id="picture">
+            </div>
+            </div>
+        <div class="tab-pane active fade"  id="action" align="center">
+            <h2>action</h2>
+        </div>
+        <div class="tab-pane active fade"  id="comedy" align="center">
+            <h2>comedy</h2>
+        </div>
+        <div class="tab-pane active fade"  id="scary" align="center">
+            <h2>scary</h2>
+        </div>
+        <div class="tab-pane active fade"  id="scen" align="center">
+            <h2>scene</h2>
+        </div>
+        <div class="tab-pane active fade"  id="cartoon" align="center">
+            <h2>cartoon</h2>
+        </div>
+        <div class="tab-pane active fade"  id="suspenseful" align="center">
+            <h2>suspenseful</h2>
+        </div>
+        <div class="tab-pane active fade"  id="panic" align="center">
+            <h2>panic</h2>
+        </div>
+    </div>
+        </div>
+</div>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>
