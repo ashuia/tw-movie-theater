@@ -2,7 +2,8 @@
  * Created by ashui on 17-8-2.
  */
 'use strict';
-const movies=[{
+const movies=[
+    {
     "id": 837,
     "alt": "https://movie.douban.com/subject/1316510/",
     "year": 1993,
@@ -45,7 +46,7 @@ const movies=[{
         "genre_id": 27
     }]
 describe('recommentd test',()=>{
-    it("test environment should ok",()=>{
-        expect().toEqual("bca");
+    it("data get ok",()=>{
+        expect(addRecommends(movies).toString()).toEqual("837,1044,1126");
     });
 });
