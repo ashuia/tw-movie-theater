@@ -51,6 +51,7 @@ app.get('/search',function (req,res) {//电影名获取电影Id数组,电影前�
 app.get('/movies/:id',function (req,res) {//电影Id获取电影对象
     let movieId = req.params.id;
     req.models.movie.find({id:movieId},function (err,result) {
+        console.log(result[0]);
         res.send(result[0]);
     })
 });
