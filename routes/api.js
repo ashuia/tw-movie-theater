@@ -3,8 +3,7 @@ let app = express();
 let orm = require("orm");
 // let sqlite3 = require("sqlite3");
 
-
-app.use(orm.express("sqlite:///home/letra/WebstormProjects/tw-movie-theater/movies.db", {//读取数据库
+app.use(orm.express("sqlite:///home/letra/tw-movie-theater/movies.db", {//读取数据库
     define: function (db, models, next) {
         models.movie = db.define("movie", {
             id:Number,
@@ -34,7 +33,7 @@ app.get('/search',function (req,res) {//电影名获取电影Id数组,电影前�
     let movieTitle = req.query.title;//chosenMoviesId=[];
     req.models.movie.find({title:orm.like(movieTitle+'%')},function (err,results) {
         console.log(results);
-        if(results!==[]){
+        if(results.length!==0){
             res.send(results);
             // results.forEach(function (movie,index) {
             //     chosenMoviesId.push(movie.id);
