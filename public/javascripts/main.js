@@ -24,9 +24,12 @@ function loadTheSearching(data) {
     }
     else {
         //不是是数组即data返回到界面上
+
     }
 }
 
 function showTheSearchMovies(moviesArray) {
     //显示电影数组函数
+
 }
+

@@ -1,10 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>思沃学院主页</title>
+    <link rel="stylesheet" href="../bootstrap-resume-starting-point/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../bootstrap-resume-starting-point/jquery-3.2.1.js"></script>
+    <script src="../bootstrap-resume-starting-point/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style type="text/css">
+        nav{
+            width: 100%;
+            height: 60px;
+            background: rgba(0,0,0,.3);
+            position: absolute;
+            z-index: 10;
+        }
+        nav ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li{
+            text-align: center;
+            float: left;
+            line-height: 60px;
+        }
+        nav ul li a{
+            width: 100px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            display: block;
+        }
+        nav ul li a:hover,nav ul li a:visited{
+            text-decoration: none;
+            background: rgba(0,0,0,.5);
+            color: #fff;
+        }
+        .words{font-size: 40px;
+            letter-spacing: 10px;
+            position: absolute;
+            top:50%;
+            left: 30%;}
+        .imgw{position: relative;
+            opacity:0.3;
+            filter:alpha(opacity=40);}
+        img{
+            width:80%;
+        }
+    </style>
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">思沃影院</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="Home">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#index.html">主页
+                            <span class="sr-only">
+
+                            </span>
+
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入电影名">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+
+        </div><!-- /.container-fluid -->
+    </div>
+</nav>
+
+
+<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item active">
+            <div style=" width:100%">
+                <div  style=" float:left; width:33%;"><img src="../content/轮播25.webp"style="width:100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播28.webp"style="width: 100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播29.webp"style="width: 100%;height: 50%"></div>
+            </div>
+            <div class="carousel-caption">
+                <a class="btn btn-large btn-primary" href="#">神奇女侠</a>
+            </div>
+            <div class="container">
+            </div>
+        </div>
+        <div class="item">
+            <div style=" width:100%">
+                <div  style=" float:left; width:33%;"><img src="../content/轮播22.webp"style="width:100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播23.webp"style="width: 100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播24.webp"style="width: 100%;height: 50%"></div>
+            </div>
+            <div class="container">
+                <div class="carousel-caption">
+                    <a class="btn btn-large btn-danger" href="#">记忆大师</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div style=" width:100%">
+                <div  style=" float:left; width:33%;"><img src="../content/轮播16.jpg"style="width:100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播15.jpg"style="width: 100%;height: 50%"></div>
+                <div  style=" float:left; width:33%;"><img src="../content/轮播19.jpg"style="width: 100%;height: 50%"></div>
+            </div>
+            <div class="container">
+                <div class="carousel-caption">
+                    <a class="btn btn-large btn-danger" href="#">湄公河行动</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div><!-- /.carousel -->
+<!--content module-->
+<hr>
+<h2 align="center">热门推荐</h2>
+<hr>
+<div class="col-md-3"align="center">
+    <img src="../content/大护法.jpg" style="width: 250px;height: 250px;margin:0 auto;" class="img-rounded" >
+    <p>原创动画电影，由不思凡执导，小连杀等著名配音演员参与配音。讲述了奕卫国大护法为寻太子误闯花生镇，卷入一场被欲望支配阴谋中的故事。</p>
+    <button type="button" class="btn btn-primary">Find more!</button>
+</div>
+<div class="col-md-3"align="center">
+    <img src="../content/绣春刀.jpg" style="width: 250px;height: 250px;margin:0 auto;" class="img-rounded" >
+    <p>该片讲述了明末崇祯年间，锦衣卫三兄弟奉命追杀魏忠贤，最后却卷入到一场宫廷阴谋当中的充满悬疑的故事。
+        2014年8月7日于中国内地上映。
+    </p>
+    <button type="button" class="btn btn-primary">Find more!</button>
+</div>
+<div class="col-md-3"align="center">
+    <img src="../content/摔跤吧爸爸.jpg" style="width:250px;height: 250px;margin:0 auto;" class="img-rounded" >
+    <p>该电影根据真人真事改编，讲述曾经的摔跤冠军辛格培养两个女儿成为女子摔跤冠军，打破印度传统的励志故事。
+        2017年5月5日在中国大陆上映。
+    </p>
+    <button type="button" class="btn btn-primary">Find more!</button>
+</div>
+<div class="col-md-3"align="center">
+    <img src="../content/模仿游戏.jpg" style="width: 250px;height: 250px;margin:0 auto;" class="img-rounded" >
+    <p>影片改编自安德鲁·霍奇斯编著的传记《艾伦·图灵传》，讲述了“计算机科学之父”艾伦·图灵的传奇人生。
+        将于2015年7月21日在中国大陆上映。</p>
+    <button type="button" class="btn btn-primary">Find more!</button>
+</div>
+<div class="container">
+    <script src="../js/main.js"></script>
+    <h2 align="center"><strong>影视分类</strong></h2><hr/>
+    <div class="tabbable">
+        <div class="row-fluid" >
+            <div class="col-sm-3">
+                <h4 align="center"><strong>按类型分类</strong></h4>
+                <ul class="nav nav-pills " style="background-color:#f8f8f8 " >
+                    <li><a href="#全部类型" data-toggle="tab" onclick="abruf(this.name)"name="全部类型">全部类型</a></li>
+                    <li><a href="#动作" data-toggle="tab" onclick="abruf(this.name)" name="动作">动作</a></li>
+                    <li><a href="#喜剧" data-toggle="tab"onclick="abruf(this.name)"name="喜剧">喜剧</a></li>
+                    <li><a href="#恐怖" data-toggle="tab" onclick="abruf(this.name)" name="恐怖">恐怖</a></li>
+                    <li><a href="#情景" data-toggle="tab" onclick="abruf(this.name)" name="情景">情景剧</a></li>
+                    <li><a href="#动漫" data-toggle="tab" onclick="abruf(this.name)"name="动漫">动漫</a></li>
+                    <li><a href="#悬疑" data-toggle="tab" onclick="abruf(this.name)"name="悬疑">悬疑</a></li>
+                    <li><a href="#惊悚" data-toggle="tab" onclick="abruf(this.name)" name="惊悚">惊悚</a></li>
+                    <li><a href="#冒险" data-toggle="tab" onclick="abruf(this.name)" name="冒险">惊悚</a></li>
+                    <li><a href="#奇幻" data-toggle="tab" onclick="abruf(this.name)" name="奇幻">奇幻</a></li>
+                    <li><a href="#音乐" data-toggle="tab" onclick="abruf(this.name)" name="音乐">音乐</a></li>
+                    <li><a href="#西部" data-toggle="tab"  onclick="abruf(this.name)" name="西部">西部</a></li>
+                    <li><a href="#纪录片" data-toggle="tab" onclick="abruf(this.name)" name="纪录片">纪录片</a></li>
+                    <li><a href="#战争" data-toggle="tab" onclick="abruf(this.name)" name="战争">战争</a></li>
+                </ul>
+                <hr style="background-color: #f8f8f8">
+                <ul class="nav nav-pills " style="background-color:#f8f8f8 " >
+                    <li><a href="#全部地区" data-toggle="tab" onclick="abruf(this.name)"name="全部地区">全部地区</a></li>
+                    <li><a href="#内地" data-toggle="tab" onclick="abruf(this.name)" name="内地">内地</a></li>
+                    <li><a href="#港台" data-toggle="tab"onclick="abruf(this.name)"name="港台">港台</a></li>
+                    <li><a href="#美国" data-toggle="tab" onclick="abruf(this.name)" name="美国">美国</a></li>
+                    <li><a href="#英国" data-toggle="tab" onclick="abruf(this.name)" name="英国">英国</a></li>
+                    <li><a href="#德国" data-toggle="tab" onclick="abruf(this.name)"name="德国">德国</a></li>
+                    <li><a href="#韩国" data-toggle="tab" onclick="abruf(this.name)"name="韩国">韩国</a></li>
+                    <li><a href="#日本" data-toggle="tab" onclick="abruf(this.name)" name="日本">日本</a></li>
+                    <li><a href="#澳大利亚" data-toggle="tab" onclick="abruf(this.name)" name="澳大利亚">澳大利亚</a></li>
+
+                </ul>
+                <hr style="background-color: #f8f8f8">
+                <ul class="nav nav-pills " style="background-color:#f8f8f8 " >
+                    <li><a href="#全部时间" data-toggle="tab" onclick="abruf(this.name)"name="全部时间">全部时间</a></li>
+                    <li><a href="#2017" data-toggle="tab" onclick="abruf(this.name)" name="2017">2017新片</a></li>
+                    <li><a href="#2016" data-toggle="tab"onclick="abruf(this.name)"name="2016">2016</a></li>
+                    <li><a href="#2015" data-toggle="tab" onclick="abruf(this.name)" name="2015">2015</a></li>
+                    <li><a href="#2014" data-toggle="tab" onclick="abruf(this.name)" name="2014">2014</a></li>
+                    <li><a href="#2013" data-toggle="tab" onclick="abruf(this.name)"name="2013">2013</a></li>
+                    <li><a href="#2012" data-toggle="tab" onclick="abruf(this.name)"name="2012">2012</a></li>
+                    <li><a href="#2011" data-toggle="tab" onclick="abruf(this.name)" name="2011">2011</a></li>
+                    <li><a href="#2010" data-toggle="tab" onclick="abruf(this.name)" name="2010">2010</a></li>
+
+                </ul>
+                <hr>
+
+            </div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <button class="btn btn-primary">按时间排序</button>
+                        <button class="btn btn-primary">按评分排序</button>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="tab-content">
+                    <div class="tab-pane active fade"  id="alltype" >
+                        <div class="container-fluid">
+                            <div class="row"  id="picture">
+                            </div>
+                        </div>
+                        <div class="tab-pane active fade"  id="action" align="center">
+                            <h2>action</h2>
+                        </div>
+                        <div class="tab-pane active fade"  id="comedy" align="center">
+                            <h2>comedy</h2>
+                        </div>
+                        <div class="tab-pane active fade"  id="scary" align="center">
+                            <h2>scary</h2>
+                        </div>
+                        <div class="tab-pane active fade"  id="scen" align="center">
+                            <h2>scene</h2>
+                        </div>
+                        <div class="tab-pane active fade"  id="cartoon" align="center">
+                            <h2>cartoon</h2>
+                        </div>
+                        <div class="tab-pane active fade"  id="suspenseful" align="center">
+                            <h2>suspenseful</h2>
+                        </div>
+                        <div class="tab-pane active fade"  id="panic" align="center">
+                            <h2>panic</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
