@@ -1,5 +1,6 @@
 `use strict`
 $(document).ready(loadInfo());
+let number=0;
 function loadInfo() {
     let movieId=GetQueryString("id");
     if(movieId !=null && movieId.toString().length>1)
@@ -70,14 +71,13 @@ function loadCommentsOnHtml(comments) {
 function addRecommends(data){
     let result=[];
     data.forEach(function(item, index, array){
-        let number=0;
         if(index<12){
             if(number<6){
                 addRecommendOne(item,'rom1');
             }
-            else{
+            /*else{
                 addRecommendOne(item,'rom2');
-            }
+            }*/
             number++;
             result.push(item.id);
         }
