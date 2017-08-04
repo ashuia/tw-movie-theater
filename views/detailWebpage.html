@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -9,18 +10,51 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <title>电影详细页面</title>
     <link rel="stylesheet" href="../public/stylesheets/style.css">
+
+    <script type="text/javascript" src="detail.js"></script>
 </head>
-<body>
-<div class="container-fluid box80">
-   
-    <div>
-        <p style="color:#007722">喜欢这部电影的人也喜欢 · · · · · ·</p>
+<body id="detail">
+<br><br>
+    <div class="container-fluid box80" id="movieContents" style="background-color: cornsilk" >
+      <div class="row" >
+          <div class="col-lg-3 col-md-3" id="mainImage"  >
+          </div>
+
+          <div class="col-lg-4 col-md-4" id="detailInfo">
+               <h1 id="movieName" style="font-style: oblique"><b></b></h1>
+              <br>
+              <small> 导演:    </small><span id="directors"></span><br>
+              <small> 演员:    </small><span id="actors"></span><br>
+              <small> 类型:    </small><span id="type"></span><br>
+              <small> 语言:    </small><span id="language"></span><br>
+              <small> 片长:    </small><span id="length"></span><br>
+              <small> 上映日期:    </small><span id="releasedTime"></span>
+          </div>
+          <div class="col-lg-1 col-md-1">
+              <hr align="right" style="width:2px;height:200px; "color="#ada9a9">
+          </div>
+          <div class="col-lg-4 col-md-4" id="commentsScore" >
+              <h3 style="color: #007722">评分</h3>
+              <p style="text-align: left" class="grades"></p>
+          </div>
+      </div>
+
+        <hr class="separateBeforeSummary">
+      <div class="row" id="summary">
+          <div class="caption" style="padding: 20px" >
+              <p ></p>
+          </div>
+      </div>
+
+        <hr class="separateBeforeComments">
+      <div class="row" id="comments">
+      </div>
+        <div>
+            <p style="color:#007722">喜欢这部电影的人也喜欢 · · · · · ·</p>
+        </div>
+        <div class="row" id="row1"></div>
+        <div class="row" id="row2"></div>
     </div>
-    <div class="row" id="row1"></div>
-    <div class="row" id="row2"></div>
-
-
-</div>
 <script type="text/javascript" src="./recommend.js"></script>
 </body>
 </html>
