@@ -1,9 +1,18 @@
 let express = require('express');
 let app = express();
 let orm = require("orm");
+let path = require("path");
 // let sqlite3 = require("sqlite3");
 
-app.use(orm.express("sqlite:///home/letra/tw-movie-theater/movies.db", {//读取数据库
+let appRoot = path.join(__dirname,"../");
+
+app.all('*',function (req,res,next) {
+    res.header('Access-Control-Allow-Origin','*');
+    res.header('Access-Control-Allow-Methods','*');
+    next();
+});
+
+app.use(orm.express(`sqlite:///${appRoot}movies.db`, {//读取数据库
     define: function (db, models, next) {
         models.movie = db.define("movie", {
             id:Number,
@@ -14,7 +23,8 @@ app.use(orm.express("sqlite:///home/letra/tw-movie-theater/movies.db", {//读取
             original_title:String,
             directors:String,
             casts:String,
-            image:String
+            image:String,
+            summary:String
         });
         models.genre = db.define("genre",{
             id:Number,
@@ -24,6 +34,12 @@ app.use(orm.express("sqlite:///home/letra/tw-movie-theater/movies.db", {//读取
             id:Number,
             movie_id:Number,
             genre_id:Number
+        });
+        models.comment = db.define("comment",{
+            id:Number,
+            movie_id:Number,
+            user:String,
+            content:String
         });
         next();
     }
@@ -35,12 +51,6 @@ app.get('/search',function (req,res) {//电影名获取电影Id数组,电影前�
         console.log(results);
         if(results.length!==0){
             res.send(results);
-            // results.forEach(function (movie,index) {
-            //     chosenMoviesId.push(movie.id);
-            //     if(index===results.length-1){
-            //         res.send(chosenMoviesId);
-            //     }
-            // });
         }
         else {
             res.send(`没有找到关于 “${movieTitle}” 的电影，换个搜索词试试吧。`);
@@ -49,6 +59,7 @@ app.get('/search',function (req,res) {//电影名获取电影Id数组,电影前�
 });
 
 app.get('/movies/:id',function (req,res) {//电影Id获取电影对象
+
     let movieId = req.params.id;
     req.models.movie.find({id:movieId},function (err,result) {
         console.log(result[0]);
@@ -56,20 +67,39 @@ app.get('/movies/:id',function (req,res) {//电影Id获取电影对象
     })
 });
 
+app.get('/movies/:id/comments',function (req,res) {
+    let movieId = req.params.id,commentArr=[];
+    req.models.comment.find({movie_id:movieId},function (err,result) {
+        result.forEach((item,index)=>{
+            commentArr.push(item.content);
+            if(index===result.length-1){
+                console.log(commentArr);
+                res.send(commentArr);
+            }
+        });
+    });
+});
+
 app.get('/movies/',function (req,res) {//标签获取该标签下所有电影对象数组     Egurl:http://localhost:9998/movies?genreName=爱情
-    let genreName = req.query.genreName,moviesInThisGenre=[];
-    req.models.genre.find({name:genreName},function (err,result0) {
-        req.models.movie_genre.find({genre_id:result0[0].id},function (err,result1) {
-            result1.forEach((item,index)=>{
-                req.models.movie.find({id:item.movie_id},function (err,result2) {
-                    moviesInThisGenre.push(result2[0]);
-                    if(index===result1.length-1){
-                        res.send(moviesInThisGenre);
-                    }
+    if(!req.query.genreName){
+        
+    }
+    else {
+        let genreName = req.query.genreName,moviesInThisGenre=[];
+
+        req.models.genre.find({name:genreName},function (err,result0) {
+            req.models.movie_genre.find({genre_id:result0[0].id},function (err,result1) {
+                result1.forEach((item,index)=>{
+                    req.models.movie.find({id:item.movie_id},function (err,result2) {
+                        moviesInThisGenre.push(result2[0]);
+                        if(index===result1.length-1){
+                            res.send(moviesInThisGenre);
+                        }
+                    });
                 });
             });
         });
-    });
+    }
 });
 
 app.get('/movies/:id/similar',function (req,res) {//获取相关电影
@@ -81,17 +111,19 @@ app.get('/movies/:id/similar',function (req,res) {//获取相关电影
                 req.models.movie.find({id:idObj.movie_id},function (err,result) {
                     similarMoviesArr.push(result[0]);
                     if(index===Result.length-1){
+                        console.log(similarMoviesArr);
                         res.send(similarMoviesArr);
                     }
-                })
-            })
-        })
-    })
+                });
+            });
+        });
+    });
 });
 
 app.get('/sortItems',function (req,res) {
 
 });//返回所有标签，不需要提供req数据   Egurl:http://localhost:9998/sortItems
+
 
 let server= app.listen(9998,function () {
     let host = server.address().address;
