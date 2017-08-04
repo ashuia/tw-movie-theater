@@ -47,9 +47,7 @@ function addRecommendSql(id) {
         success: function(data) {
             addRecommends(data);
         }
-    }).error(function(data) {
-        getFailed(data);
-    })
+    });
 }
 function addRecommends(data){
     let result=[];
