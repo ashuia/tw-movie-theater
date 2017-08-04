@@ -1,5 +1,6 @@
 
 `use strict`
+const BASE_URL = "http://sixgods.ngrok.cc";
 $(document).ready(function () {
     getDetailDataFromSQ(movieId);
     addRecommendSql(movieId);
@@ -70,10 +71,12 @@ function addRecommendOne(oneMovie,rom='rom1') {
     let $divBox=$(`<div class="col-xs-6 col-sm-4  col-md-2 "></div>`);
     let $dlBox=$(`<dl></dl>`);
     let $dtBox=$(`<dt></dt>`);
-    let $aBox=$(`<a href="${oneMovie.alt}"></a>`);
+    let $aBox=$(`<a ></a>`);
     let $imgBox=$(`<img src="${oneMovie.image}" alt="${oneMovie.title}" class="">`);
+    $imgBox.click(`window.location.href='./detail.html?id=${oneMovie.id}`);
     let $ddBox=$(`<dd></dd>`);
-    let $aTiltleBox=$(`<a href="${oneMovie.alt}" class="">"${oneMovie.title}"</a>`);
+    let $aTiltleBox=$(`<a  class="">"${oneMovie.title}"</a>`);
+    $aTiltleBox.click(`window.location.href='./detail.html?id=${oneMovie.id}`);
     if(rom=='rom1'){
         $(`#row1`).append($divBox);
     }
@@ -87,6 +90,10 @@ function addRecommendOne(oneMovie,rom='rom1') {
     $dlBox.append($ddBox);
     $ddBox.append($aTiltleBox);
 }
+function getDetailHtml(id) {
+    $.get(BASE_URL + `/movies/:${id}`,function (data) {
 
+    })
 
+}
 
