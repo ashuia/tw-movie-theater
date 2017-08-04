@@ -1,6 +1,7 @@
 /**
  * Created by letra on 17-8-3.
  */
+let movieArr=[];
 
 $(document).ready(function () {
     init();
@@ -11,7 +12,8 @@ function init() {
     let searchButton = $('#searchButton');
     searchButton.on('submit', function (event) {
         event.preventDefault();
-        let searchContent;//searchContent读取搜索的内容
+        let title= $('#searchTitle').val();
+        let searchContent = search(title);//searchContent读取搜索的内容
         searchContentInsqlite(searchContent);
     });
 }
@@ -30,6 +32,13 @@ function loadTheSearching(data) {
 
 function showTheSearchMovies(moviesArray) {
     //显示电影数组函数
+
+}
+
+function search(title) {
+    $.get(`http://sixgods.ngrok.cc/search?title=${title}`,function (data){
+        movieArr=data;
+    })
 
 }
 
