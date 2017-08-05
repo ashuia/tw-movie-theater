@@ -6,13 +6,12 @@ $(document).ready(function () {
     init();
 });
 
-
 function init() {
     let searchButton = $('#searchButton');
     searchButton.on('submit', function (event) {
         event.preventDefault();
         let searchContent;//searchContent读取搜索的内容
-        searchContentInsqlite(searchContent);
+        searchContentInSqlite(searchContent);
     });
 }
 
