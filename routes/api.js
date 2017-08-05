@@ -127,7 +127,7 @@ app.get('/sortItems',function (req,res) {
 
 });//返回所有标签，不需要提供req数据   Egurl:http://localhost:9998/sortItems
 
-let server= app.listen(9998,function () {
+let server= app.    listen(9998,function () {
     let host = server.address().address;
     let port = server.address().port;
     console.log("应用实例，访问地址为 http://localhost%s%s", host, port);
