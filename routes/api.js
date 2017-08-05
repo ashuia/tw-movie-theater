@@ -4,7 +4,7 @@ let orm = require("orm");
 // let sqlite3 = require("sqlite3");
 
 
-app.use(orm.express("sqlite:///home/letra/WebstormProjects/tw-movie-theater/movies.db", {//读取数据库
+app.use(orm.express("sqlite:////home/ashui/workspace/movie/tw-movie-theater/movies.db", {//读取数据库
     define: function (db, models, next) {
         models.movie = db.define("movie", {
             id:Number,
