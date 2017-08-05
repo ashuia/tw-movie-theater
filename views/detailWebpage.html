@@ -2,9 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>电影名称</title><!--所选择的电影名称 -->
+    <title>电影详细页面</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/style.css">
+    <script src="../jquery-3.2.1.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="detailWebpage.js"></script>
+
+    <style>
+        body{
+            background-color: lightgrey;
+        }
+    </style>
 </head>
-<body>
+<body id="detail">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=" ">思沃影院</a >
+            </div>
+
+            <div class="collapse navbar-collapse" id="Home">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="mainWebpage.html">主页
+                            <span class="sr-only">
+
+                            </span>
+
+                        </a >
+                    </li>
+
+                </ul>
+
+
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入电影名">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+
+        </div><!-- /.container-fluid -->
+    </div>
+  </nav>
+    <div style="height: 60px">
+    </div>
+    <div class="container" id="movieContents" style="background-color: #efebeb" >
+      <div class="row" >
+          <!--封面图片-->
+          <div class="col-lg-3 col-md-3 col-sm-3" id="mainImage"  >
+          </div>
+          <!--详细信息-->
+          <div class="col-lg-4 col-md-4 col-sm-4" id="detailInfo">
+               <h1 id="movieName" style="font-style: oblique"><b></b></h1>
+              <br>
+              <small> 导演:    </small><span id="directors"></span><br>
+              <small> 演员:    </small><span id="actors"></span><br>
+              <small> 类型:    </small><span id="type"></span><br>
+              <small> 语言:    </small><span id="language"></span><br>
+              <small> 片长:    </small><span id="length"></span><br>
+              <small> 上映日期:    </small><span id="releasedTime"></span>
+          </div>
+          <div class="col-lg-1 col-md-1 col-sm-1">
+              <hr align="right" style="width:2px;height:200px; "color="#ada9a9">
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4" id="commentsScore" >
+              <h3 style="color: #007722">评分</h3>
+              <p style="text-align: left" class="grades"></p>
+          </div>
+      </div>
+       <!--剧情简介-->
+        <hr class="separateBeforeSummary">
+      <div class="row">
+          <div class="caption"  id="summary" style="padding: 20px" >
+          </div>
+      </div>
+        <!--影评-->
+        <hr class="separateBeforeComments">
+      <div class="row" id="comments">
+      </div>
+
+        <!--类似电影推荐-->
+        <div>
+            <p style="color:#007722">喜欢这部电影的人也喜欢 · · · · · ·</p>
+        </div>
+        <div class="row" id="row1"></div>
+        <div class="row" id="row2"></div>
+
+    </div>
 
 </body>
 </html>
