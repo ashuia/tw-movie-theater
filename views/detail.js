@@ -1,4 +1,5 @@
 `use strict`
+const BASE_URL = "http://127.0.0.1:9998";
 $(document).ready(loadInfo());
 let number=0;
 function loadInfo() {
@@ -14,7 +15,7 @@ function loadInfo() {
 
 function getDetailDataFromSQ(movieId) {
     $.get(
-        "http://sixgods.ngrok.cc/movies/"+movieId,
+        BASE_URL+"/movies/"+movieId,
 
         function (data) {
             loadDataOnHtml(data);
@@ -24,7 +25,7 @@ function getDetailDataFromSQ(movieId) {
 
 function getCommentsFromSQ(movieID) {
     $.get(
-        "http://sixgods.ngrok.cc/movies/"+movieID+"/comments",
+        BASE_URL+"/movies/"+movieID+"/comments",
         function (comments) {
             loadCommentsOnHtml(comments);
         }
@@ -34,7 +35,7 @@ function getCommentsFromSQ(movieID) {
 function getRecommendsFromSQ(movieId) {
     $.ajax({
         type: 'GET',
-        url:"http://sixgods.ngrok.cc/movies/"+movieId+'/similar',
+        url:BASE_URL+"/movies/"+movieId+'/similar',
         success: function(movies) {
             addRecommends(movies);
         }

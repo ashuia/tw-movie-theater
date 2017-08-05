@@ -3,7 +3,7 @@ let app = express();
 let orm = require("orm");
 // let sqlite3 = require("sqlite3");
 
-app.use(orm.express("sqlite:///home/letra/tw-movie-theater/movies.db", {//读取数据库
+app.use(orm.express("sqlite:../movies.db", {//读取数据库
     define: function (db, models, next) {
         models.movie = db.define("movie", {
             id:Number,
@@ -28,7 +28,13 @@ app.use(orm.express("sqlite:///home/letra/tw-movie-theater/movies.db", {//读取
         next();
     }
 }));
-
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 app.get('/search',function (req,res) {//电影名获取电影Id数组,电影前几字也可查询
     let movieTitle = req.query.title;//chosenMoviesId=[];
     req.models.movie.find({title:orm.like(movieTitle+'%')},function (err,results) {
